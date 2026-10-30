@@ -434,6 +434,13 @@ body {
   color: #ffffff;
 }
 
+.badge-benchmark {
+  background: #f97316;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 800;
+}
+
 .card-body {
   padding: 20px;
   flex: 1;

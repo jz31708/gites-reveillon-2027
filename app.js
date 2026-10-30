@@ -1,7 +1,7 @@
-// Gîtes Dashboard App - TOP 30 D'ÉLITE AVEC VUE PAR DÉFAUT TOP 6
+// Gîtes Dashboard App - TOP 30 D'ÉLITE AVEC VUE PAR DÉFAUT TOP 10
 let allGites = [];
 let filteredGites = [];
-let showFullTop30 = false; // Default: show TOP 6 only!
+let showFullTop30 = false; // Default: show TOP 10 only!
 
 let map;
 let markersLayer;
@@ -109,15 +109,15 @@ function updateToggleUI() {
   if (showFullTop30) {
     toggleBtn.classList.add('expanded');
     if (toggleIcon) toggleIcon.textContent = '▲';
-    if (toggleText) toggleText.textContent = 'Réduire à la sélection d\'élite (Afficher le TOP 6)';
+    if (toggleText) toggleText.textContent = 'Réduire à la sélection d\'élite (Afficher le TOP 10)';
     if (modeText) modeText.textContent = 'TOP 30 Complet';
     if (counter) counter.textContent = filteredGites.length;
   } else {
     toggleBtn.classList.remove('expanded');
     if (toggleIcon) toggleIcon.textContent = '👀';
-    if (toggleText) toggleText.textContent = 'Afficher les 24 autres gîtes du TOP 30 (Voir les 30)';
-    if (modeText) modeText.textContent = 'TOP 6 d\'Élite';
-    if (counter) counter.textContent = Math.min(6, filteredGites.length);
+    if (toggleText) toggleText.textContent = 'Afficher les 20 autres gîtes du TOP 30 (Voir les 30)';
+    if (modeText) modeText.textContent = 'TOP 10 d\'Élite';
+    if (counter) counter.textContent = Math.min(10, filteredGites.length);
   }
 }
 
@@ -210,8 +210,8 @@ function renderGrid() {
 
   if (loadMoreBtn) loadMoreBtn.style.display = 'none';
 
-  // Render Top 6 by default, or all if toggled
-  const listToRender = showFullTop30 ? filteredGites : filteredGites.slice(0, 6);
+  // Render Top 10 by default, or all if toggled
+  const listToRender = showFullTop30 ? filteredGites : filteredGites.slice(0, 10);
 
   listToRender.forEach(g => {
     const card = document.createElement('div');
@@ -219,7 +219,9 @@ function renderGrid() {
     card.id = `card-${g.id}`;
 
     let badgesHtml = `<span class="badge badge-rank">#${g.rank}</span>`;
-    if (g.has_spa) {
+    if (g.name.includes("Bergerie")) {
+      badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa (1 446 €)</span>`;
+    } else if (g.has_spa) {
       badgesHtml += `<span class="badge badge-spa">♨️ ${escapeHtml(g.spa_type)}</span>`;
     }
     if (g.is_direct_owner) {
