@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Gîtes Nouvel An 2026-2027 — Le Moteur de Recherche Ultime</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="badge-tag">🎆 Réveillon 2026-2027 • 29 Décembre au 02 Janvier (4 nuits)</div>
+      <h1>Trouvez le Gîte Idéal pour le Nouvel An</h1>
+      <p class="subtitle">Exploration exhaustive de <strong>1 800+ gîtes</strong> grande capacité (12-30 personnes). Direct propriétaires sans commission d'agence & plateformes vérifiées.</p>
+      
+      <!-- Stats Banner -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val" id="stat-total">1 848</div>
+          <div class="stat-lbl">Gîtes explorés</div>
+        </div>
+        <div class="stat-card highlight-green">
+          <div class="stat-val" id="stat-spa">344</div>
+          <div class="stat-lbl">Vrais Spas / Jacuzzis vérifiés</div>
+        </div>
+        <div class="stat-card highlight-blue">
+          <div class="stat-val" id="stat-direct">1 482</div>
+          <div class="stat-lbl">Direct Propriétaire (0% frais)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">22</div>
+          <div class="stat-lbl">Départements scannés</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Controls Bar -->
+  <section class="controls-section">
+    <div class="container">
+      <div class="controls-card">
+        <!-- Search input -->
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Rechercher par nom, ville, département (Ardèche, Lot, Gard, Lozère...)...">
+        </div>
+
+        <!-- Filter chips -->
+        <div class="filters-row">
+          <button class="filter-chip active" data-filter="all">Tous les gîtes</button>
+          <button class="filter-chip chip-spa" data-filter="spa">♨️ Avec Vrai Jacuzzi / Spa</button>
+          <button class="filter-chip chip-direct" data-filter="direct">👤 Direct Propriétaire (0% frais)</button>
+          <button class="filter-chip" data-filter="cap12_14">👥 12 à 14 personnes</button>
+          <button class="filter-chip" data-filter="cap15_plus">👥 15+ personnes</button>
+          <button class="filter-chip" data-filter="fete">🎉 Ambiance festive / Isolé</button>
+        </div>
+
+        <!-- Sort & Count row -->
+        <div class="sort-row">
+          <div class="results-counter">
+            Affichage de <strong id="results-count">0</strong> gîtes correspondants
+          </div>
+          <div class="sort-selector">
+            <label for="sort-select">Trier par :</label>
+            <select id="sort-select">
+              <option value="score_desc">🏆 Classement & Recommandation</option>
+              <option value="cap_desc">👥 Capacité (plus grand d'abord)</option>
+              <option value="beds_desc">🛏️ Nombre de chambres</option>
+              <option value="name_asc">🔤 Nom (A - Z)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content: Map & Listing Cards -->
+  <main class="container main-layout">
+    
+    <!-- Map Section -->
+    <section class="map-wrapper">
+      <div class="map-header">
+        <h2>🗺️ Carte interactive des hébergements</h2>
+        <div class="legend">
+          <span class="legend-item"><span class="dot dot-green"></span> Avec Spa / Jacuzzi</span>
+          <span class="legend-item"><span class="dot dot-blue"></span> Direct Propriétaire</span>
+          <span class="legend-item"><span class="dot dot-orange"></span> Plateforme (Airbnb / Booking)</span>
+        </div>
+      </div>
+      <div id="map" class="map-container"></div>
+    </section>
+
+    <!-- Cards Grid -->
+    <section class="results-section">
+      <div id="gites-grid" class="gites-grid">
+        <!-- Rendered via JS -->
+      </div>
+      <div id="no-results" class="no-results" style="display: none;">
+        <h3>Aucun gîte ne correspond à ces critères</h3>
+        <p>Essayez de relâcher les filtres pour voir davantage d'options.</p>
+      </div>
+      <div class="pagination-wrapper">
+        <button id="load-more-btn" class="btn-load-more">Charger 24 gîtes de plus</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>Moteur de recherche autonome de gîtes • Réveillon 2026-2027 • Données certifiées & sans frais cachés</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>
