@@ -146,6 +146,8 @@ function applyFiltersAndSort() {
 
   filteredGites.sort((a, b) => {
     if (sortMode === 'score_desc') return a.rank - b.rank;
+    if (sortMode === 'price_asc') return (a.price || 999999) - (b.price || 999999);
+    if (sortMode === 'price_desc') return (b.price || 0) - (a.price || 0);
     if (sortMode === 'cap_desc') return b.capacity - a.capacity;
     if (sortMode === 'beds_desc') return b.bedrooms - a.bedrooms;
     if (sortMode === 'name_asc') return a.name.localeCompare(b.name);
@@ -170,7 +172,7 @@ function updateMapMarkers() {
 
     const marker = L.marker([g.lat, g.lon], { icon }).addTo(markersLayer);
 
-    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (4 nuits)` : `<em>Tarif direct propriétaire</em>`;
+    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (Total 4 nuits • ~${g.price_per_person_10p} €/pers à 10)` : `<em>Tarif direct propriétaire</em>`;
     const phoneHtml = g.phone ? `<p style="margin:4px 0;">📞 <a href="tel:${g.phone}">${g.phone}</a></p>` : '';
     const spaTag = g.has_spa ? `<span style="background:#10b981; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold;">♨️ ${g.spa_type}</span>` : `<span style="background:#64748b; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px;">Maison de charme</span>`;
 
@@ -235,12 +237,17 @@ function renderGrid() {
     let priceHtml = '';
     if (g.price) {
       priceHtml = `
-        <div class="price-val">${g.price.toLocaleString('fr-FR')} €</div>
-        <div class="price-unit">4 nuits • ~${g.price_per_person_10p} €/pers à 10</div>
+        <div class="price-val">
+          ${g.price.toLocaleString('fr-FR')} € 
+          <span class="badge-price-tag">Total 4 nuits</span>
+        </div>
+        <div class="price-unit">
+          🎆 Réveillon • <strong>~${g.price_per_person_10p} €/pers</strong> à 10 (${Math.round(g.price_per_person_10p / 4)} €/nuit/pers)
+        </div>
       `;
     } else {
       priceHtml = `
-        <div class="price-val" style="font-size:1rem; color:#0284c7;">Tarif direct propriétaire</div>
+        <div class="price-val" style="font-size:1.1rem; color:#0284c7;">Tarif direct propriétaire</div>
         <div class="price-unit">0% de commission d'agence</div>
       `;
     }
