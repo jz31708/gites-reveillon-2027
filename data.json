@@ -49,7 +49,7 @@
   {
     "id": "ab_7736635",
     "rank": 2,
-    "name": "Mas de l'Ayrolle • Isolé, jacuzzi & sauna",
+    "name": "Mas de l'Ayrolle • Isolé & jacuzzi",
     "department": "Ardèche",
     "address": "Ardèche",
     "capacity": 10,
@@ -58,11 +58,10 @@
     "spa_type": "jacuzzi",
     "amenities": [
       "jacuzzi",
-      "sauna",
       "cheminée"
     ],
     "isolation": "ISOLÉ",
-    "isolation_note": "Avis client : « le logement est isolé, véritable havre de paix » ; hôte : « lieu calme ».",
+    "isolation_note": "Avis client : « le logement est isolé, véritable havre de paix » ; autre avis : « au calme avec la piscine et le sauna ».",
     "is_direct_owner": false,
     "phone": null,
     "website": null,
@@ -70,7 +69,7 @@
     "price": 1802,
     "price_per_person_10p": 180.2,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 3 chambres · 7 lits. Note 4,76 (119 avis). Jacuzzi utilisable toute l'année + sauna, en pleine nature. Attention : 7 lits pour 10 et deux gîtes sur la propriété — demander si l'autre gîte est loué en même temps.",
+    "description": "Jacuzzi utilisable toute l'année, en pleine nature. Un avis client évoque aussi un sauna (non listé par l'hôte). Attention : 7 lits pour 10 et deux gîtes sur la propriété — demander si l'autre gîte est loué en même temps.",
     "photo_cover": "https://a0.muscache.com/im/pictures/98353353/e2a327f5_original.jpg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/98353353/e2a327f5_original.jpg?im_w=720",
