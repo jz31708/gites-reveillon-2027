@@ -62,10 +62,13 @@ function updateStats() {
   const statTotal = document.getElementById('stat-total');
   const statSpa = document.getElementById('stat-spa');
   const statDirect = document.getElementById('stat-direct');
+  const statComplet = document.getElementById('stat-complet');
 
-  if (statTotal) statTotal.textContent = allGites.length;
-  if (statSpa) statSpa.textContent = allGites.filter(g => g.has_spa).length;
-  if (statDirect) statDirect.textContent = allGites.filter(g => g.is_direct_owner).length;
+  const verified = allGites.filter(g => g.avail_type === 'VERIFIED_ONLINE');
+  if (statTotal) statTotal.textContent = verified.length;
+  if (statSpa) statSpa.textContent = verified.filter(g => g.has_spa).length;
+  if (statDirect) statDirect.textContent = allGites.filter(g => g.avail_type === 'DIRECT_INQUIRY').length;
+  if (statComplet) statComplet.textContent = allGites.filter(g => g.avail_type === 'UNAVAILABLE').length;
 }
 
 function setupEventListeners() {
@@ -221,8 +224,18 @@ function renderGrid() {
     card.id = `card-${g.id}`;
 
     let badgesHtml = `<span class="badge badge-rank">#${g.rank}</span>`;
+    if (g.avail_type === 'VERIFIED_ONLINE') {
+      badgesHtml += `<span class="badge badge-avail-verified">🟢 Disponible 29/12 → 02/01</span>`;
+    } else if (g.avail_type === 'DIRECT_INQUIRY') {
+      badgesHtml += `<span class="badge badge-avail-direct">📞 Réservation Directe</span>`;
+    } else if (g.avail_type === 'UNAVAILABLE') {
+      badgesHtml += `<span class="badge badge-avail-complet">❌ Complet sur ces dates</span>`;
+    } else {
+      badgesHtml += `<span class="badge badge-avail-unverified">⚪ Non revérifié</span>`;
+    }
+
     if (g.name.includes("Bergerie")) {
-      badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa (1 446 €)</span>`;
+      badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa</span>`;
     } else if (g.has_spa) {
       badgesHtml += `<span class="badge badge-spa">♨️ ${escapeHtml(g.spa_type)}</span>`;
     }
@@ -256,10 +269,23 @@ function renderGrid() {
     if (g.phone) {
       actionsHtml += `<a href="tel:${g.phone}" class="btn-cta btn-phone">📞 Appeler (${escapeHtml(g.phone)})</a>`;
     }
-    if (g.website) {
+    if (g.website && g.website !== g.listing_url) {
       actionsHtml += `<a href="${g.website}" target="_blank" class="btn-cta btn-site">🌐 Site officiel</a>`;
     }
-    actionsHtml += `<a href="${g.listing_url}" target="_blank" class="btn-cta btn-book">Détails →</a>`;
+    const availUi = {
+      VERIFIED_ONLINE: { note: 'verified', icon: '✅', book: 'Réserver en direct (Airbnb) →' },
+      DIRECT_INQUIRY: { note: 'inquiry', icon: 'ℹ️', book: 'Voir l\'annonce officielle →' },
+      UNAVAILABLE: { note: 'complet', icon: '❌', book: 'Voir l\'annonce (complète) →' },
+      UNVERIFIED: { note: 'unverified', icon: '⚪', book: 'Vérifier les dates sur la plateforme →' }
+    };
+    const ui = availUi[g.avail_type] || availUi.UNVERIFIED;
+    actionsHtml += `<a href="${g.listing_url}" target="_blank" class="btn-cta btn-book">${ui.book}</a>`;
+
+    const availNoteHtml = g.avail_details ? `
+      <div class="avail-note ${ui.note}">
+        ${ui.icon} ${escapeHtml(g.avail_details)}
+      </div>
+    ` : '';
 
     card.innerHTML = `
       <div class="card-media">
@@ -276,6 +302,7 @@ function renderGrid() {
           <span class="spec-item">🛏️ <strong>${g.bedrooms} chambres</strong></span>
           <span class="spec-item">⭐ <strong>${g.score} pts</strong></span>
         </div>
+        ${availNoteHtml}
         <div class="card-desc">${escapeHtml(g.description)}</div>
         <div class="card-footer">
           <div class="price-row">

@@ -441,6 +441,72 @@ body {
   font-weight: 800;
 }
 
+.badge-avail-verified {
+  background: #059669;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+  box-shadow: 0 2px 5px rgba(5, 150, 105, 0.35);
+}
+
+.badge-avail-direct {
+  background: #0284c7;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+}
+
+.avail-note {
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.avail-note.verified {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  font-weight: 600;
+}
+
+.avail-note.inquiry {
+  background: #f0f9ff;
+  color: #075985;
+  border: 1px solid #bae6fd;
+  font-weight: 500;
+}
+
+/* States added after the 30/10 21h live re-verification */
+.badge-avail-complet {
+  background: #b91c1c;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 800;
+}
+
+.badge-avail-unverified {
+  background: #64748b;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.avail-note.complet {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  font-weight: 600;
+}
+
+.avail-note.unverified {
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  font-weight: 500;
+}
+
 .card-body {
   padding: 20px;
   flex: 1;
