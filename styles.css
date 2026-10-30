@@ -680,3 +680,41 @@ body {
   text-align: center;
   font-size: 0.85rem;
 }
+
+/* --- Aménagements + isolement (ajout 30/10 soir) --- */
+.amenity-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 8px;
+}
+.chip {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.iso-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.iso-badge {
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.iso-isole .iso-badge   { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.iso-calme .iso-badge   { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+.iso-non-isole .iso-badge { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+.iso-inconnu .iso-badge { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+.iso-note { color: #64748b; font-style: italic; }

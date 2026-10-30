@@ -1,4 +1,4 @@
-// Gîtes Dashboard App - TOP 30 D'ÉLITE AVEC VUE PAR DÉFAUT TOP 10
+﻿// Gîtes Dashboard App - TOP 30 D'ÉLITE AVEC VUE PAR DÉFAUT TOP 10
 let allGites = [];
 let filteredGites = [];
 let showFullTop30 = false; // Default: show TOP 10 only!
@@ -287,6 +287,22 @@ function renderGrid() {
       </div>
     ` : '';
 
+    // Aménagements réels (billard, sauna, baby-foot…) — la piscine extérieure n'est pas listée
+    const chipsHtml = (g.amenities && g.amenities.length) ? `
+      <div class="amenity-chips">
+        ${g.amenities.map(a => `<span class="chip">${escapeHtml(a)}</span>`).join('')}
+      </div>
+    ` : '';
+
+    const isoKey = { 'ISOLÉ': 'isole', 'CALME': 'calme', 'NON ISOLÉ': 'non-isole', 'NON DOCUMENTÉ': 'inconnu' }[g.isolation] || 'inconnu';
+    const isoIcon = { isole: '🟢', calme: '🟡', 'non-isole': '🔴', inconnu: '⚪' }[isoKey];
+    const isoHtml = g.isolation ? `
+      <div class="iso-line iso-${isoKey}">
+        <span class="iso-badge">${isoIcon} ${escapeHtml(g.isolation)}</span>
+        ${g.isolation_note ? `<span class="iso-note">${escapeHtml(g.isolation_note)}</span>` : ''}
+      </div>
+    ` : '';
+
     card.innerHTML = `
       <div class="card-media">
         <img class="card-img" src="${coverUrl}" alt="${escapeHtml(g.name)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80'">
@@ -303,6 +319,8 @@ function renderGrid() {
           <span class="spec-item">⭐ <strong>${g.score} pts</strong></span>
         </div>
         ${availNoteHtml}
+        ${chipsHtml}
+        ${isoHtml}
         <div class="card-desc">${escapeHtml(g.description)}</div>
         <div class="card-footer">
           <div class="price-row">
@@ -328,3 +346,4 @@ function escapeHtml(text) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
