@@ -1,6 +1,7 @@
-// Gîtes Dashboard App - TOP 30 D'ÉLITE
+// Gîtes Dashboard App - TOP 30 D'ÉLITE AVEC VUE PAR DÉFAUT TOP 6
 let allGites = [];
 let filteredGites = [];
+let showFullTop30 = false; // Default: show TOP 6 only!
 
 let map;
 let markersLayer;
@@ -22,9 +23,9 @@ const blueIcon = L.divIcon({
 
 const orangeIcon = L.divIcon({
   className: 'custom-pin',
-  html: `<div style="background:#f97316; width:22px; height:22px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 2px 6px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px;">⭐</div>`,
-  iconSize: [22, 22],
-  iconAnchor: [11, 11]
+  html: `<div style="background:#f97316; width:24px; height:24px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 2px 6px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px;">⭐</div>`,
+  iconSize: [24, 24],
+  iconAnchor: [12, 12]
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -46,7 +47,6 @@ function initMap() {
 
 async function loadData() {
   try {
-    // Cache-busting timestamp ensures user browser never serves stale cached data
     const res = await fetch('data.json?t=' + Date.now());
     allGites = await res.json();
   } catch (err) {
@@ -87,6 +87,38 @@ function setupEventListeners() {
   sortSelect.addEventListener('change', () => {
     applyFiltersAndSort();
   });
+
+  // Toggle Top 6 / Top 30
+  const toggleBtn = document.getElementById('toggle-top30-btn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      showFullTop30 = !showFullTop30;
+      updateToggleUI();
+      renderGrid();
+    });
+  }
+}
+
+function updateToggleUI() {
+  const toggleBtn = document.getElementById('toggle-top30-btn');
+  const toggleIcon = document.getElementById('toggle-icon');
+  const toggleText = document.getElementById('toggle-text');
+  const modeText = document.getElementById('mode-text');
+  const counter = document.getElementById('results-count');
+
+  if (showFullTop30) {
+    toggleBtn.classList.add('expanded');
+    if (toggleIcon) toggleIcon.textContent = '▲';
+    if (toggleText) toggleText.textContent = 'Réduire à la sélection d\'élite (Afficher le TOP 6)';
+    if (modeText) modeText.textContent = 'TOP 30 Complet';
+    if (counter) counter.textContent = filteredGites.length;
+  } else {
+    toggleBtn.classList.remove('expanded');
+    if (toggleIcon) toggleIcon.textContent = '👀';
+    if (toggleText) toggleText.textContent = 'Afficher les 24 autres gîtes du TOP 30 (Voir les 30)';
+    if (modeText) modeText.textContent = 'TOP 6 d\'Élite';
+    if (counter) counter.textContent = Math.min(6, filteredGites.length);
+  }
 }
 
 function applyFiltersAndSort() {
@@ -112,7 +144,6 @@ function applyFiltersAndSort() {
     return true;
   });
 
-  // Strict sorting: Default is explicit rank order 1 to 30
   filteredGites.sort((a, b) => {
     if (sortMode === 'score_desc') return a.rank - b.rank;
     if (sortMode === 'cap_desc') return b.capacity - a.capacity;
@@ -121,8 +152,7 @@ function applyFiltersAndSort() {
     return 0;
   });
 
-  document.getElementById('results-count').textContent = filteredGites.length;
-
+  updateToggleUI();
   updateMapMarkers();
   renderGrid();
 }
@@ -130,6 +160,7 @@ function applyFiltersAndSort() {
 function updateMapMarkers() {
   markersLayer.clearLayers();
 
+  // Highlight Top 6 on map, but plot all filtered on map
   filteredGites.forEach(g => {
     if (!g.lat || !g.lon) return;
 
@@ -177,15 +208,16 @@ function renderGrid() {
     noResults.style.display = 'none';
   }
 
-  // Hide pagination as TOP 30 is fully rendered directly
   if (loadMoreBtn) loadMoreBtn.style.display = 'none';
 
-  filteredGites.forEach(g => {
+  // Render Top 6 by default, or all if toggled
+  const listToRender = showFullTop30 ? filteredGites : filteredGites.slice(0, 6);
+
+  listToRender.forEach(g => {
     const card = document.createElement('div');
     card.className = 'gite-card';
     card.id = `card-${g.id}`;
 
-    // Badges
     let badgesHtml = `<span class="badge badge-rank">#${g.rank}</span>`;
     if (g.has_spa) {
       badgesHtml += `<span class="badge badge-spa">♨️ ${escapeHtml(g.spa_type)}</span>`;
