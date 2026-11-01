@@ -237,7 +237,7 @@ function renderGrid() {
     if (g.budget_ok === false) {
       badgesHtml += `<span class="badge badge-over-budget">💸 Hors budget</span>`;
     } else if (g.price && g.budget_ok) {
-      badgesHtml += `<span class="badge badge-in-budget">💰 ≤ 1 800 €</span>`;
+      badgesHtml += `<span class="badge badge-in-budget">💰 ≤ 1 802 €</span>`;
     }
     if (g.name.includes("Bergerie")) {
       badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa</span>`;
@@ -356,6 +356,7 @@ function escapeHtml(text) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
 
 
 
