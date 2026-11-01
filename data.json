@@ -14,11 +14,10 @@
       "cheminée",
       "ping-pong",
       "jeux de société",
-      "salle de jeux",
-      "pétanque"
+      "salle de jeux"
     ],
     "isolation": "CALME",
-    "isolation_note": "« ir durant les chaudes journées d’été,<br />un parking privé,<br />et surtout un cadre exceptionnel, au calme absolu, entouré de vignes et de nature.<br /><br />La climatisation réversible dans les 4 chambres »",
+    "isolation_note": "Hôte : « le luxe réside dans le calme, l'espace, la douceur de vivre ».",
     "budget_max": 1800,
     "budget_ok": true,
     "is_direct_owner": false,
@@ -28,7 +27,7 @@
     "price": 1574,
     "price_per_person_10p": 157.4,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 4 chambres · 5 lits. Ici, la Provence ne se visite pas… elle se vit. Au cœur des vignes du Domaine Les Ondines, entre le Mont Ventoux et les Dentelles de Montmirail, La Cantabile offre une parenthèse rare dans une Provence authentique et préservée. Ici, le luxe réside dans le calme, l’espace, la lumière et la douceur de vivre. Les journées s’écoulent au rythme de la nature, du chant des cigales et des l",
+    "description": "10 voyageurs · 4 chambres. Intérieur : billard, cheminée, ping-pong, jeux de société, salle de jeux. « ir durant les chaudes journées d’été,<br />un parking privé,<br />et surtout un cadre exceptionnel, au calme absolu, entouré de vignes et de nature.<br /><br />La climatisation réversible dans les 4 chambres » Domaine viticole : demander si d'autres logements du domaine sont loués en même temps.",
     "photo_cover": "https://a0.muscache.com/im/pictures/hosting/Hosting-1709422085899226682/original/d2721571-2cbc-417b-b501-76c3aa229f52.jpeg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-1709422085899226682/original/d2721571-2cbc-417b-b501-76c3aa229f52.jpeg?im_w=720",
@@ -47,7 +46,8 @@
     "avail_details": "Vérifié en direct sur Airbnb le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027  10 voyageurs  total 1 574 € frais inclus. Preuve : evidence/ab_1709422085899226682.png",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_1709422085899226682.png",
-    "score": 200
+    "score": 200,
+    "winter_only": true
   },
   {
     "id": "ab_1293361797466705113",
@@ -67,7 +67,7 @@
     "price": 1446,
     "price_per_person_10p": 144.6,
     "party_policy": "fête_modérée",
-    "description": "Hébergement témoin / coup de cœur d'origine sans spa. Magnifique rénovation en pierre face au Causse du Lot. 5 chambres réelles, 3 SDB, séjour cathédrale avec poêle à bois. 1 446 € au total sur Airbnb pour les 4 nuits.",
+    "description": "12 voyageurs · 5 chambres · 10 lits. Intérieur : ping-pong. Avis : « Grand calme dans un environnement exceptionnel ». Pas de jacuzzi — c'est la référence confort, pas spa.",
     "photo_cover": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     "photos": [
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80"
@@ -87,7 +87,8 @@
     "budget_max": 1800,
     "budget_ok": true,
     "checked_at": "30/10/2026 21:05",
-    "evidence": "evidence/v2_rank10.png"
+    "evidence": "evidence/v2_rank10.png",
+    "winter_only": true
   },
   {
     "id": "ab_1457948134395513432",
@@ -115,7 +116,7 @@
     "price": 1557,
     "price_per_person_10p": 155.7,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 3 chambres · 5 lits. Villa de charme entièrement privatisée, idéale pour des vacances en famille, des week-ends entre amis ou une escapade bien-être à 15 min d’Alès. Profitez d’un SPA intérieur haut de gamme, d’une piscine privée, de 3 chambres confortables et jusqu’à 10 couchages. Salon lumineux, cuisine équipée, jardin, terrasse et parking privé. Wi-Fi fibre et Netflix inclus. Options sur demande : livraison de repas, massages, at",
+    "description": "10 voyageurs · 3 chambres. Intérieur : jacuzzi, cheminée, spa intérieur. L'annonce ne dit rien sur les voisins : à demander avant de bloquer.",
     "photo_cover": "https://a0.muscache.com/im/pictures/hosting/Hosting-1457948134395513432/original/26cd397f-4323-45a0-be45-d133b819c6b1.jpeg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-1457948134395513432/original/26cd397f-4323-45a0-be45-d133b819c6b1.jpeg?im_w=720",
@@ -134,7 +135,8 @@
     "avail_details": "Vérifié en direct sur Airbnb le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027  10 voyageurs  total 1 557 € frais inclus. Preuve : evidence/ab_1457948134395513432.png",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_1457948134395513432.png",
-    "score": 190
+    "score": 190,
+    "winter_only": true
   },
   {
     "id": "ab_49395667",
@@ -152,7 +154,7 @@
       "cheminée"
     ],
     "isolation": "NON ISOLÉ",
-    "isolation_note": "« La villa est située dans un écrin de verdure mais pas isolé. Elle sera l'endroit idéal pour un séjour relaxant entre amis ou en famille. Vous aurez accès à une »",
+    "isolation_note": "Hôte : « La villa est située dans un écrin de verdure mais pas isolé. »",
     "budget_max": 1800,
     "budget_ok": true,
     "is_direct_owner": false,
@@ -162,7 +164,7 @@
     "price": 1500,
     "price_per_person_10p": 150.0,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 4 chambres · 6 lits. Note 4,86 (114 avis). La villa est située dans un écrin de verdure mais pas isolé. Elle sera l'endroit idéal pour un séjour relaxant entre amis ou en famille. Vous aurez accès à une piscine XL 12m x 5m, un bain nordique, des jeux pour les enfants, etc... Epicerie, bureau de poste, restaurants et un archéosite réputé à 5min a pied. Montans est à 5 minutes en voiture de Gaillac avec tous les services, centre historique",
+    "description": "10 voyageurs · 4 chambres. Intérieur : jacuzzi, bain nordique, cheminée. Note 4,86 (114 avis). « La villa est située dans un écrin de verdure mais pas isolé. Elle sera l'endroit idéal pour un séjour relaxant entre amis ou en famille. Vous aurez accès à une » L'hôte écrit lui-même que la villa n'est pas isolée.",
     "photo_cover": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDkzOTU2Njc%3D/original/a582f21c-2eb7-4226-af03-7161250138cb.jpeg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDkzOTU2Njc%3D/original/a582f21c-2eb7-4226-af03-7161250138cb.jpeg?im_w=720",
@@ -181,7 +183,8 @@
     "avail_details": "Vérifié en direct sur Airbnb le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027  10 voyageurs  total 1 500 € frais inclus. Preuve : evidence/ab_49395667.png",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_49395667.png",
-    "score": 185
+    "score": 185,
+    "winter_only": true
   },
   {
     "id": "ab_10652494",
@@ -198,7 +201,7 @@
       "jeux de société"
     ],
     "isolation": "CALME",
-    "isolation_note": "« r /><br /><b>Le logement</b><br />Jolie maison dans un poumon de verdure, idéale pour se ressourcer au calme. Nombreuses activités en pleine nature possibles.<br />Pour bébé, lit parapluie, baignoire bébé et »",
+    "isolation_note": "Hôte : « idéale pour se ressourcer au calme ».",
     "budget_max": 1800,
     "budget_ok": true,
     "is_direct_owner": false,
@@ -208,7 +211,7 @@
     "price": 602,
     "price_per_person_10p": 60.2,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 4 chambres · 7 lits. Belle maison familiale en pleine nature avec 4 grandes chambres (3 lits doubles et 4 lits simples), une cuisine équipée, un grand salon avec cheminée, terrasse belle vue. A 5 minutes en voiture de Maurs, avec toutes les commodités. Rando à proximité. Le logement Jolie maison dans un poumon de verdure, idéale pour se ressourcer au calme. Nombreuses activités en pleine nature possibles. Pour",
+    "description": "10 voyageurs · 4 chambres. Intérieur : cheminée, jeux de société. « r /><br /><b>Le logement</b><br />Jolie maison dans un poumon de verdure, idéale pour se ressourcer au calme. Nombreuses activités en pleine nature possibles.<br />Pour bébé, lit parapluie, baignoire bébé et » 7 lits pour 10 personnes.",
     "photo_cover": "https://a0.muscache.com/im/pictures/50ab0456-175a-4735-975f-e9c28cf056b4.jpg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/50ab0456-175a-4735-975f-e9c28cf056b4.jpg?im_w=720",
@@ -227,7 +230,8 @@
     "avail_details": "Vérifié en direct sur Airbnb le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027  10 voyageurs  total 602 € frais inclus. Preuve : evidence/ab_10652494.png",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_10652494.png",
-    "score": 180
+    "score": 180,
+    "winter_only": true
   },
   {
     "id": "ab_2798881",
@@ -244,7 +248,7 @@
       "ping-pong"
     ],
     "isolation": "NON ISOLÉ",
-    "isolation_note": "« Belle propriété privée dans village de caractère, composé de deux parties joignables ou indépendantes (séparées par une porte intérieure) : la maiso »",
+    "isolation_note": "Hôte : « propriété privée dans village de caractère », en deux parties séparées par une porte.",
     "budget_max": 1800,
     "budget_ok": true,
     "is_direct_owner": false,
@@ -254,7 +258,7 @@
     "price": 1261,
     "price_per_person_10p": 126.1,
     "party_policy": "fête_modérée",
-    "description": "12 voyageurs · 4 chambres · 8 lits. Note 4,68 (38 avis). Belle propriété privée dans village de caractère, composé de deux parties joignables ou indépendantes (séparées par une porte intérieure) : la maison principale et un appartement. Les deux parties ont un accès sur le jardin et la piscine et possèdent chacune leur terrasse. Elles en font un lieu idéal pour des familles avec enfants et/ou amis souhaitant passer du temps ensemble avec la possibilité de garde",
+    "description": "12 voyageurs · 4 chambres. Intérieur : baby-foot, ping-pong. Note 4,68 (38 avis). « Belle propriété privée dans village de caractère, composé de deux parties joignables ou indépendantes (séparées par une porte intérieure) : la maiso » En cœur de village perché, et propriété en deux parties.",
     "photo_cover": "https://a0.muscache.com/im/pictures/14214124-6974-4d90-b656-46443b97542d.jpg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/14214124-6974-4d90-b656-46443b97542d.jpg?im_w=720",
@@ -273,7 +277,8 @@
     "avail_details": "Vérifié en direct sur Airbnb le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027  10 voyageurs  total 1 261 € frais inclus. Preuve : evidence/ab_2798881.png",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_2798881.png",
-    "score": 175
+    "score": 175,
+    "winter_only": true
   },
   {
     "id": "direct_brugas_grandgite",
@@ -293,7 +298,7 @@
     "price": null,
     "price_per_person_10p": null,
     "party_policy": "fête_possible",
-    "description": "Hameau privé en grès rouge au cœur des Grands Causses. 220 m², salon avec cheminée, cuisine pro, Jacuzzi en cèdre rouge et sauna panoramique. Grange voûtée de 90 m² pour soirée et fête. Sans aucun voisin direct.",
+    "description": "14 voyageurs · 6 chambres. Intérieur : à confirmer par téléphone. Site officiel sans calendrier ni moteur de réservation (vérifié 01/11).",
     "photo_cover": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     "photos": [
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80"
@@ -312,7 +317,8 @@
     "budget_ok": true,
     "budget_max": 1800,
     "checked_at": null,
-    "platform": "Site officiel"
+    "platform": "Site officiel",
+    "winter_only": true
   },
   {
     "id": "gg_38-domaine-de-chougnes-7427",
@@ -332,7 +338,7 @@
     "price": null,
     "price_per_person_10p": null,
     "party_policy": "fête_possible",
-    "description": "Ancien domaine de Chartreux d'exception. Espace bien-être intérieur avec Jacuzzi et bassin de nage à contre-courant accessible toute l'année. Séjour cathédrale de plus de 100 m² avec poêle à bois et terrasse panoramique sur le Vercors.",
+    "description": "14 voyageurs · 6 chambres. Intérieur : espace spa, nage intérieure. Formulaire /reserver uniquement, aucun calendrier en ligne.",
     "photo_cover": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     "photos": [
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80"
@@ -352,7 +358,8 @@
     "budget_ok": true,
     "budget_max": 1800,
     "checked_at": null,
-    "platform": "Site officiel"
+    "platform": "Site officiel",
+    "winter_only": true
   },
   {
     "id": "gg_30-villa-aina-3931",
@@ -372,7 +379,7 @@
     "price": null,
     "price_per_person_10p": null,
     "party_policy": "fête_possible",
-    "description": "Ravissante villa de plain-pied de 220 m² à 10 min d'Uzès. 5 grandes suites parentales avec salles d'eau privatives, séjour de 60 m² avec poêle à bois, terrasse couverte de 130 m² et spa privatif sous pergola.",
+    "description": "12 voyageurs · 5 chambres. Intérieur : poêle à bois, ping-pong, salle de jeux. Fiche GrandsGîtes : pas de calendrier, seulement une carte Google Maps.",
     "photo_cover": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     "photos": [
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80"
@@ -393,7 +400,8 @@
     "budget_ok": true,
     "budget_max": 1800,
     "checked_at": null,
-    "platform": "Site officiel"
+    "platform": "Site officiel",
+    "winter_only": true
   },
   {
     "id": "gg_05-le-montagnard-6380",
@@ -413,7 +421,7 @@
     "price": null,
     "price_per_person_10p": null,
     "party_policy": "fête_possible",
-    "description": "Chalet de 190 m² avec 5 chambres équipées chacune de leur salle d'eau privative (6 SDB, 6 WC). Vrai spa couvert extérieur, salle de jeux avec baby-foot, poêle à bois (bois offert) et lits faits à l'arrivée.",
+    "description": "14 voyageurs · 5 chambres. Intérieur : à confirmer par téléphone. Aucun calendrier ni moteur de réservation en ligne (vérifié 01/11).",
     "photo_cover": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     "photos": [
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80"
@@ -432,7 +440,8 @@
     "budget_ok": true,
     "budget_max": 1800,
     "checked_at": null,
-    "platform": "Site officiel"
+    "platform": "Site officiel",
+    "winter_only": true
   },
   {
     "id": "ab_54400815",
@@ -448,11 +457,10 @@
       "billard",
       "baby-foot",
       "cheminée",
-      "ping-pong",
-      "pétanque"
+      "ping-pong"
     ],
     "isolation": "CALME",
-    "isolation_note": "« été de trois hectares face à une vue exceptionnelle. Au sommet d'une colline, dans un environnement silencieux, une piscine (12m/6.)et de multiples occasions de promenade et de découverte. <br />Créez des souv »",
+    "isolation_note": "« été de trois hectares face à une vue exceptionnelle.",
     "budget_max": 1800,
     "budget_ok": false,
     "is_direct_owner": false,
@@ -462,7 +470,7 @@
     "price": 1930,
     "price_per_person_10p": 193.0,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 6 chambres · 10 lits. Au coeur du triangle d'or, entre Najac, Cordes-sur-Ciel et Saint-Antonin-Noble Val, à deux pas de Laguépie sur la Viaur et l'Aveyron, une propriété de trois hectares face à une vue exceptionnelle. Au sommet d'une colline, dans un environnement silencieux, une piscine (12m/6.)et de multiples occasions de promenade et de découverte. Créez des souvenirs dans ce logement unique et familial. Le logeme",
+    "description": "10 voyageurs · 6 chambres. Intérieur : billard, baby-foot, cheminée, ping-pong. « été de trois hectares face à une vue exceptionnelle. Au sommet d'une colline, dans un environnement silencieux, une piscine (12m/6.)et de multiples occasions de promenade et de découverte. <br />Créez des souv » Hors budget (1 930 €).",
     "photo_cover": "https://a0.muscache.com/im/pictures/miso/Hosting-54400815/original/d7b4a109-4e72-4df8-8d18-e354cdee9f44.jpeg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/miso/Hosting-54400815/original/d7b4a109-4e72-4df8-8d18-e354cdee9f44.jpeg?im_w=720",
@@ -481,7 +489,8 @@
     "avail_details": "Disponible et vérifié  mais 1 930 € les 4 nuits : au-dessus du plafond de 1800 €.",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_54400815.png",
-    "score": 150
+    "score": 150,
+    "winter_only": true
   },
   {
     "id": "ab_7736635",
@@ -508,7 +517,7 @@
     "price": 1802,
     "price_per_person_10p": 180.2,
     "party_policy": "fête_modérée",
-    "description": "10 voyageurs · 3 chambres · 7 lits. En 2018, la propriété Mas de l'Ayrolle ouvre deux gîtes rénovés, permettant aux visiteurs de s'immerger dans un lieu calme rempli d'authenticité. Depuis toujours, cette propriété familial en pierre avait pour vocation d’être un lieu d’accueil, de détente et de convivialité. Bâtisses du siècle dernier, proches du flanc sud du mont Lozère, le Mas de l'Ayrolle se situe dans le Parc National des Cévennes, réserve d",
+    "description": "10 voyageurs · 3 chambres. Intérieur : jacuzzi, cheminée. Hors budget (1 802 €).",
     "photo_cover": "https://a0.muscache.com/im/pictures/98353353/e2a327f5_original.jpg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/98353353/e2a327f5_original.jpg?im_w=720",
@@ -527,7 +536,8 @@
     "avail_details": "Disponible et vérifié  mais 1 802 € les 4 nuits : au-dessus du plafond de 1800 €.",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_7736635.png",
-    "score": 145
+    "score": 145,
+    "winter_only": true
   },
   {
     "id": "ab_1026007079999413883",
@@ -547,7 +557,7 @@
     "price": 2110,
     "price_per_person_10p": 211.0,
     "party_policy": "fête_modérée",
-    "description": "Mas en pierres authentique sur un parc privé de 4 300 m² entouré de vignes et de lavandes, face au Mont Ventoux. 4 grandes chambres, 7 lits, 3 salles de bain, grand salon chaleureux et Jacuzzi privatif.",
+    "description": "10 voyageurs · 4 chambres. Intérieur : cheminée, ping-pong, jeux de société. Avis : « La maison est mitoyenne avec les voisins ». Mitoyenne avec les voisins et hors budget.",
     "photo_cover": "https://a0.muscache.com/im/pictures/miso/Hosting-1026007079999413883/original/210e6e6d-0eb5-4685-b12a-08889fbd8835.jpeg?im_w=720",
     "photos": [
       "https://a0.muscache.com/im/pictures/miso/Hosting-1026007079999413883/original/210e6e6d-0eb5-4685-b12a-08889fbd8835.jpeg?im_w=720",
@@ -563,11 +573,11 @@
     "amenities": [
       "cheminée",
       "ping-pong",
-      "jeux de société",
-      "pétanque"
+      "jeux de société"
     ],
     "isolation": "NON ISOLÉ",
-    "isolation_note": "Avis : « La maison est mitoyenne avec les voisins »."
+    "isolation_note": "Avis : « La maison est mitoyenne avec les voisins ».",
+    "winter_only": true
   },
   {
     "id": "ab_48496955",
@@ -604,7 +614,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "ab_886730952262155051",
@@ -641,7 +652,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_01-allymes-4685",
@@ -685,7 +697,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_03-moulin-chantelle-5342",
@@ -729,7 +742,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_04-hameau-oresonnis-2107",
@@ -773,7 +787,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_07-maison-descharmes-4025",
@@ -816,7 +831,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_07-stalban-4396",
@@ -860,7 +876,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_09-ferme-plate-4414",
@@ -904,7 +921,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_23-refuge-saisons-7554",
@@ -948,7 +966,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_24-cedres-bleus-6906",
@@ -992,7 +1011,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_26-kalinka-496",
@@ -1036,7 +1056,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_30-jardins-de-la-fontaine-5446",
@@ -1080,7 +1101,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_32-moulin-samsara-6137",
@@ -1124,7 +1146,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_34-chateau-du-parc-6688",
@@ -1168,7 +1191,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_34-hortevieille-4167",
@@ -1212,7 +1236,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_34-mazette-6159",
@@ -1256,7 +1281,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_38-clos-des-luya-4406",
@@ -1300,7 +1326,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_43-domaine-valette-2118",
@@ -1344,7 +1371,8 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   },
   {
     "id": "gg_43-estaou-2399",
@@ -1388,6 +1416,7 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null
+    "budget_ok": null,
+    "winter_only": true
   }
 ]
