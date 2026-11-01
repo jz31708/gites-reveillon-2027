@@ -718,3 +718,17 @@ body {
 .iso-non-isole .iso-badge { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
 .iso-inconnu .iso-badge { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
 .iso-note { color: #64748b; font-style: italic; }
+
+/* --- Budget plafond 1800 EUR --- */
+.badge-in-budget {
+  background: #0f766e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 800;
+}
+.badge-over-budget {
+  background: #7c2d12;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 800;
+}

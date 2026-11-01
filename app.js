@@ -64,7 +64,7 @@ function updateStats() {
   const statDirect = document.getElementById('stat-direct');
   const statComplet = document.getElementById('stat-complet');
 
-  const verified = allGites.filter(g => g.avail_type === 'VERIFIED_ONLINE');
+  const verified = allGites.filter(g => g.avail_type === 'VERIFIED_ONLINE' && g.budget_ok !== false);
   if (statTotal) statTotal.textContent = verified.length;
   if (statSpa) statSpa.textContent = verified.filter(g => g.has_spa).length;
   if (statDirect) statDirect.textContent = allGites.filter(g => g.avail_type === 'DIRECT_INQUIRY').length;
@@ -234,6 +234,11 @@ function renderGrid() {
       badgesHtml += `<span class="badge badge-avail-unverified">⚪ Non revérifié</span>`;
     }
 
+    if (g.budget_ok === false) {
+      badgesHtml += `<span class="badge badge-over-budget">💸 Hors budget</span>`;
+    } else if (g.price && g.budget_ok) {
+      badgesHtml += `<span class="badge badge-in-budget">💰 ≤ 1 800 €</span>`;
+    }
     if (g.name.includes("Bergerie")) {
       badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa</span>`;
     } else if (g.has_spa) {
@@ -346,4 +351,6 @@ function escapeHtml(text) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+
 
