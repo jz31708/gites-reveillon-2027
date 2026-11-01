@@ -310,7 +310,8 @@ function renderGrid() {
 
     const surfaceTxt = g.salon_m2 ? `Salon ${g.salon_m2} m²`
       : (g.surface_m2 ? `Surface ${g.surface_m2} m²` : 'Surface non précisée');
-    const surfaceHtml = `<div class="surface-line">📐 ${escapeHtml(surfaceTxt)}${g.reviews ? ` · ${g.reviews} avis` : ''}</div>`;
+    const exclTxt = g.exclusivity ? ` · ${escapeHtml(g.exclusivity)}` : '';
+    const surfaceHtml = `<div class="surface-line">📐 ${escapeHtml(surfaceTxt)}${g.reviews ? ` · ${g.reviews} avis` : ''}${exclTxt}</div>`;
     card.innerHTML = `
       <div class="card-media">
         <img class="card-img" src="${coverUrl}" alt="${escapeHtml(g.name)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80'">

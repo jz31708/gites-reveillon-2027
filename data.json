@@ -15,7 +15,7 @@
     ],
     "isolation": "ISOLÉ",
     "isolation_note": "Avis client : « le logement est isolé, véritable havre de paix ».",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -40,12 +40,12 @@
     "avail_status": "DISPONIBLE",
     "avail_type": "VERIFIED_ONLINE",
     "avail_badge": "🟢 Disponible 29/12 → 02/01",
-    "avail_details": "Vérifié en direct le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027, 10 voyageurs, 1 802 €. Seul gîte isolé avec jacuzzi — 2 € au-dessus du plafond de 1 800 €.",
+    "avail_details": "Vérifié le 01/11/2026 : 4 nuits 29/12/2026 → 02/01/2027, 10 voyageurs, 1 802 €. Seul gîte isolé avec jacuzzi.",
     "checked_at": "01/11/2026",
     "evidence": "evidence/ab_7736635.png",
     "score": 200,
     "winter_only": true,
-    "budget_note": "+2 € au-dessus du plafond"
+    "exclusivity": "⚠️ 2 gîtes sur la propriété (annonce 28 pers) — exclusivité à demander"
   },
   {
     "id": "ab_1709422085899226682",
@@ -66,7 +66,7 @@
     ],
     "isolation": "CALME",
     "isolation_note": "Hôte : « le luxe réside dans le calme, l'espace, la douceur de vivre ».",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -115,7 +115,7 @@
     ],
     "isolation": "CALME",
     "isolation_note": "Hôte : « idéale pour se ressourcer au calme ».",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -166,7 +166,7 @@
     "price": 1446,
     "price_per_person_10p": 144.6,
     "party_policy": "fête_modérée",
-    "description": "12 voyageurs · 5 chambres · 8 lits · 3 salles de bain. Aucun équipement ludique listé dans la fiche (ni billard, ni baby-foot, ni ping-pong). Avis : « Grand calme dans un environnement exceptionnel ». Pas de jacuzzi — c'est la référence confort, pas spa.",
+    "description": "12 voyageurs · 5 chambres · 8 lits · 3 salles de bain · 200 m². Bergerie de la Borie, restaurée en 2019-2020, gérée par une conciergerie. Aucun équipement ludique listé (ni billard, ni ping-pong). Pas de jacuzzi — c'est la référence confort, pas spa.",
     "photo_cover": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
     "photos": [
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80"
@@ -181,14 +181,15 @@
     "amenities": [],
     "isolation": "CALME",
     "isolation_note": "Avis : « Grand calme dans un environnement exceptionnel ».",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "checked_at": "30/10/2026 21:05",
     "evidence": "evidence/v2_rank10.png",
     "winter_only": true,
     "salon_m2": null,
-    "surface_m2": null,
-    "reviews": 2
+    "surface_m2": 200,
+    "reviews": 2,
+    "exclusivity": "🔒 bergerie unique rénovée — aucun 2e logement repéré"
   },
   {
     "id": "ab_1457948134395513432",
@@ -207,7 +208,7 @@
     ],
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -258,7 +259,7 @@
     "isolation_note": "",
     "salon_m2": null,
     "surface_m2": null,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -303,7 +304,7 @@
     "isolation_note": "",
     "salon_m2": null,
     "surface_m2": 170,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -345,7 +346,7 @@
     ],
     "isolation": "NON ISOLÉ",
     "isolation_note": "Hôte : « La villa est située dans un écrin de verdure mais pas isolé. »",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -396,7 +397,7 @@
     "isolation_note": "",
     "salon_m2": null,
     "surface_m2": 140,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -436,7 +437,7 @@
     "isolation_note": "",
     "salon_m2": null,
     "surface_m2": null,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
@@ -497,7 +498,8 @@
     "isolation_note": "",
     "amenities": [],
     "budget_ok": null,
-    "winter_only": true
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "ab_886730952262155051",
@@ -535,7 +537,8 @@
     "isolation_note": "",
     "amenities": [],
     "budget_ok": null,
-    "winter_only": true
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_43-estaou-2399",
@@ -579,8 +582,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_43-domaine-valette-2118",
@@ -624,8 +628,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_26-kalinka-496",
@@ -669,8 +674,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_01-allymes-4685",
@@ -714,8 +720,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_34-mazette-6159",
@@ -759,8 +766,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_07-stalban-4396",
@@ -804,8 +812,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_09-ferme-plate-4414",
@@ -849,8 +858,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_23-refuge-saisons-7554",
@@ -894,8 +904,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_07-maison-descharmes-4025",
@@ -938,8 +949,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": true,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_04-hameau-oresonnis-2107",
@@ -983,8 +995,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "ab_54400815",
@@ -1004,7 +1017,7 @@
     ],
     "isolation": "CALME",
     "isolation_note": "« été de trois hectares face à une vue exceptionnelle.",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": false,
     "is_direct_owner": false,
     "phone": null,
@@ -1077,8 +1090,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "ab_1026007079999413883",
@@ -1118,7 +1132,8 @@
     ],
     "isolation": "NON ISOLÉ",
     "isolation_note": "Avis : « La maison est mitoyenne avec les voisins ».",
-    "winter_only": true
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_34-hortevieille-4167",
@@ -1162,8 +1177,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_32-moulin-samsara-6137",
@@ -1207,8 +1223,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_30-jardins-de-la-fontaine-5446",
@@ -1252,8 +1269,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_38-clos-des-luya-4406",
@@ -1297,8 +1315,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_24-cedres-bleus-6906",
@@ -1342,8 +1361,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "gg_34-chateau-du-parc-6688",
@@ -1387,8 +1407,9 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "",
     "amenities": [],
-    "budget_ok": null,
-    "winter_only": true
+    "budget_ok": false,
+    "winter_only": true,
+    "budget_max": 1802
   },
   {
     "id": "direct_brugas_grandgite",
@@ -1425,7 +1446,7 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "Site officiel sans calendrier ni moteur de réservation (vérifié 01/11).",
     "budget_ok": true,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "checked_at": null,
     "platform": "Site officiel",
     "winter_only": true
@@ -1466,7 +1487,7 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "Formulaire /reserver uniquement, aucun calendrier en ligne.",
     "budget_ok": true,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "checked_at": null,
     "platform": "Site officiel",
     "winter_only": true
@@ -1508,7 +1529,7 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "Fiche GrandsGîtes : pas de calendrier, seulement une carte Google Maps.",
     "budget_ok": true,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "checked_at": null,
     "platform": "Site officiel",
     "winter_only": true
@@ -1548,7 +1569,7 @@
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "Aucun calendrier ni moteur de réservation en ligne (vérifié 01/11).",
     "budget_ok": true,
-    "budget_max": 1800,
+    "budget_max": 1802,
     "checked_at": null,
     "platform": "Site officiel",
     "winter_only": true
@@ -1569,7 +1590,7 @@
     ],
     "isolation": "NON ISOLÉ",
     "isolation_note": "Hôte : « propriété privée dans village de caractère », en deux parties séparées par une porte.",
-    "budget_max": 1800,
+    "budget_max": 1802,
     "budget_ok": true,
     "is_direct_owner": false,
     "phone": null,
