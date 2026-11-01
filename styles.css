@@ -732,3 +732,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-weight: 800;
 }
+
+/* --- Surface / salon --- */
+.surface-line {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+  margin: 2px 0 8px;
+}
