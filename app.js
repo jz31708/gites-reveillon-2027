@@ -175,7 +175,7 @@ function updateMapMarkers() {
 
     const marker = L.marker([g.lat, g.lon], { icon }).addTo(markersLayer);
 
-    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (Total 4 nuits • ~${ppm} €/pers à ${g.capacity || 12})` : `<em>Tarif direct propriétaire</em>`;
+    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (Total 4 nuits • ~${Math.round(g.price / (g.capacity || 12))} €/pers à ${g.capacity || 12})` : `<em>Tarif direct propriétaire</em>`;
     const phoneHtml = g.phone ? `<p style="margin:4px 0;">📞 <a href="tel:${g.phone}">${g.phone}</a></p>` : '';
     const spaTag = g.has_spa ? `<span style="background:#10b981; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold;">♨️ ${g.spa_type}</span>` : `<span style="background:#64748b; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px;">Maison de charme</span>`;
 
