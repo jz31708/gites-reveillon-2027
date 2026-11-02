@@ -514,8 +514,8 @@
     "isolation_note": "Piscine privée chauffée, 10 avis 5/5, annonce pro. Calendrier non lisible automatiquement — le 1 500 € affiché est une caution.",
     "avail_type": "DIRECT_INQUIRY",
     "avail_status": "A_VERIFIER",
-    "avail_badge": "🔗 À vérifier à la main",
-    "avail_details": "",
+    "avail_badge": "🔗 À confirmer (calendrier illisible)",
+    "avail_details": "Gîtes de France : 12 pers, 5 chambres, 200 m², piscine privée chauffée, 10 avis 5/5, annonce pro. Le calendrier est un widget JS non lisible automatiquement ; le 1 500 € affiché est une caution, pas le prix. À appeler.",
     "price": null,
     "budget_ok": null,
     "platform": "Gîtes de France",
@@ -523,7 +523,8 @@
     "photos": [],
     "lat": null,
     "lon": null,
-    "score": 140
+    "score": 140,
+    "checked_at": "02/11/2026"
   },
   {
     "id": "abr_p1714938",
@@ -540,10 +541,10 @@
     "amenities": [],
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "Jacuzzi + piscine, 4 chambres, 2 sdb. Page bloquée par l'anti-robot : à ouvrir à la main.",
-    "avail_type": "DIRECT_INQUIRY",
-    "avail_status": "A_VERIFIER",
-    "avail_badge": "🔗 À vérifier à la main",
-    "avail_details": "",
+    "avail_type": "UNAVAILABLE",
+    "avail_status": "INDISPONIBLE",
+    "avail_badge": "❌ Indisponible sur ces dates",
+    "avail_details": "Abritel (vérifié 02/11/2026 avec dates + 12 pers) : « consultez les hébergements disponibles pour ces dates » — pas dispo du 29/12 au 02/01. Bastide 12 pers avec bain à remous extérieur : à re-tester pour d'autres dates.",
     "price": null,
     "budget_ok": null,
     "platform": "Abritel",
@@ -551,7 +552,8 @@
     "photos": [],
     "lat": null,
     "lon": null,
-    "score": 135
+    "score": 135,
+    "checked_at": "02/11/2026"
   },
   {
     "id": "abr_p2251567",
@@ -568,10 +570,10 @@
     "amenities": [],
     "isolation": "NON DOCUMENTÉ",
     "isolation_note": "Villa climatisée 12 pers, calme. Page bloquée par l'anti-robot : à ouvrir à la main.",
-    "avail_type": "DIRECT_INQUIRY",
-    "avail_status": "A_VERIFIER",
-    "avail_badge": "🔗 À vérifier à la main",
-    "avail_details": "",
+    "avail_type": "UNAVAILABLE",
+    "avail_status": "INDISPONIBLE",
+    "avail_badge": "❌ Indisponible sur ces dates",
+    "avail_details": "Abritel (vérifié 02/11/2026) : pas disponible du 29/12 au 02/01 pour 12 personnes.",
     "price": null,
     "budget_ok": null,
     "platform": "Abritel",
@@ -579,7 +581,8 @@
     "photos": [],
     "lat": null,
     "lon": null,
-    "score": 130
+    "score": 130,
+    "checked_at": "02/11/2026"
   },
   {
     "id": "ab_7736635",
