@@ -175,7 +175,7 @@ function updateMapMarkers() {
 
     const marker = L.marker([g.lat, g.lon], { icon }).addTo(markersLayer);
 
-    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (Total 4 nuits • ~${g.price_per_person_10p} €/pers à 10)` : `<em>Tarif direct propriétaire</em>`;
+    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (Total 4 nuits • ~${ppm} €/pers à ${g.capacity || 12})` : `<em>Tarif direct propriétaire</em>`;
     const phoneHtml = g.phone ? `<p style="margin:4px 0;">📞 <a href="tel:${g.phone}">${g.phone}</a></p>` : '';
     const spaTag = g.has_spa ? `<span style="background:#10b981; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold;">♨️ ${g.spa_type}</span>` : `<span style="background:#64748b; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px;">Maison de charme</span>`;
 
@@ -223,6 +223,8 @@ function renderGrid() {
     card.className = 'gite-card';
     card.id = `card-${g.id}`;
 
+    const ppm = g.price ? Math.round(g.price / (g.capacity || 12)) : null;
+    const ppn = g.price ? Math.round(g.price / 4 / (g.capacity || 12)) : null;
     let badgesHtml = `<span class="badge badge-rank">#${g.rank}</span>`;
     if (g.avail_type === 'VERIFIED_ONLINE') {
       badgesHtml += `<span class="badge badge-avail-verified">🟢 Disponible 29/12 → 02/01</span>`;
@@ -266,7 +268,7 @@ function renderGrid() {
           <span class="badge-price-tag">Total 4 nuits</span>
         </div>
         <div class="price-unit">
-          🎆 Réveillon • <strong>~${g.price_per_person_10p} €/pers</strong> à 10 (${Math.round(g.price_per_person_10p / 4)} €/nuit/pers)
+          🎆 Réveillon • <strong>~${ppm} €/pers</strong> à ${g.capacity || 12} (${ppn} €/nuit/pers)
         </div>
       `;
     } else {
