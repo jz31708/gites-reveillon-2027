@@ -746,3 +746,11 @@ body {
   background: #0d9488;
   color: #fff;
 }
+
+/* --- Score --- */
+.badge-score { background:#4c1d95; color:#fff; font-weight:800; }
+.score-line { font-size:.72rem; color:#475569; margin:0 0 8px; line-height:1.35; }
+.scoring { max-width:900px; margin:12px auto; background:#0f172a55; border:1px solid #ffffff22; border-radius:10px; padding:10px 14px; color:#e2e8f0; font-size:.82rem; }
+.scoring summary { cursor:pointer; font-weight:800; }
+.scoring ul { margin:8px 0 6px 18px; }
+.scoring li { margin:3px 0; }

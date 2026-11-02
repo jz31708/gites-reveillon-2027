@@ -241,6 +241,10 @@ function renderGrid() {
     } else if (g.price && g.budget_ok) {
       badgesHtml += `<span class="badge badge-in-budget">💰 ≤ 1 802 €</span>`;
     }
+    if (g.score) {
+      badgesHtml += `<span class="badge badge-score">🏅 ${g.score}/100</span>`;
+    }
+
     if (g.name.includes("Bergerie")) {
       badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa</span>`;
     } else if (g.has_spa) {
@@ -335,6 +339,7 @@ function renderGrid() {
         </div>
         ${availNoteHtml}
         ${chipsHtml}
+        ${g.score_breakdown ? `<div class="score-line">🏅 ${g.score}/100 — budget ${g.score_breakdown.budget} · jacuzzi ${g.score_breakdown.spa} · isolement ${g.score_breakdown.isolation} · capacité ${g.score_breakdown.capacite} · surface ${g.score_breakdown.surface} · aménagements ${g.score_breakdown.amenagements} · avis ${g.score_breakdown.avis}</div>` : ''}
         ${surfaceHtml}
         ${isoHtml}
         <div class="card-desc">${escapeHtml(g.description)}</div>
