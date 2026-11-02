@@ -757,3 +757,79 @@ body {
 
 
 .iso-sat { font-size:.72rem; color:#2563eb; text-decoration:underline; white-space:nowrap; }
+
+/* --- BLOC POINTS FORTS & POINTS D'ATTENTION (PROS & CONS) --- */
+.pros-cons-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pros-block, .cons-block {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.pros-heading {
+  font-weight: 800;
+  color: #15803d;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+
+.cons-heading {
+  font-weight: 800;
+  color: #b91c1c;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+
+.pros-list, .cons-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.pros-list li {
+  color: #1e293b;
+  margin-bottom: 3px;
+}
+
+.cons-list li {
+  color: #334155;
+  margin-bottom: 3px;
+}
+
+/* Bouton satellite HD */
+.btn-sat {
+  background: #334155;
+  color: #ffffff;
+}
+
+.btn-sat:hover {
+  background: #1e293b;
+}
+
+/* Pins personnalisés sur la carte */
+.custom-rank-pin {
+  transition: transform 0.2s ease;
+}
+
+.custom-rank-pin:hover {
+  transform: scale(1.15);
+  z-index: 1000 !important;
+}

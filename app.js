@@ -1,32 +1,10 @@
-﻿// Gîtes Dashboard App - TOP 30 D'ÉLITE AVEC VUE PAR DÉFAUT TOP 10
+// Gîtes Dashboard App - TOP 10 D'ÉLITE REVÉRIFIÉ
 let allGites = [];
 let filteredGites = [];
-let showFullTop30 = false; // Default: show TOP 10 only!
+let showFullCatalogue = false;
 
 let map;
 let markersLayer;
-
-// Custom Icons
-const greenIcon = L.divIcon({
-  className: 'custom-pin',
-  html: `<div style="background:#10b981; width:24px; height:24px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 2px 6px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px;">♨️</div>`,
-  iconSize: [24, 24],
-  iconAnchor: [12, 12]
-});
-
-const blueIcon = L.divIcon({
-  className: 'custom-pin',
-  html: `<div style="background:#0284c7; width:22px; height:22px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 2px 6px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px;">👤</div>`,
-  iconSize: [22, 22],
-  iconAnchor: [11, 11]
-});
-
-const orangeIcon = L.divIcon({
-  className: 'custom-pin',
-  html: `<div style="background:#f97316; width:24px; height:24px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 2px 6px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px;">⭐</div>`,
-  iconSize: [24, 24],
-  iconAnchor: [12, 12]
-});
 
 document.addEventListener('DOMContentLoaded', async () => {
   initMap();
@@ -35,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function initMap() {
-  map = L.map('map').setView([44.5, 3.5], 7);
+  map = L.map('map').setView([44.8, 2.5], 7);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
@@ -68,7 +46,7 @@ function updateStats() {
   if (statTotal) statTotal.textContent = verified.length;
   if (statSpa) statSpa.textContent = verified.filter(g => g.has_spa).length;
   if (statDirect) statDirect.textContent = allGites.filter(g => g.avail_type === 'DIRECT_INQUIRY').length;
-  if (statComplet) statComplet.textContent = allGites.filter(g => g.avail_type === 'UNAVAILABLE').length;
+  if (statComplet) statComplet.textContent = allGites.filter(g => g.avail_type === 'UNAVAILABLE' || g.avail_type === 'NOT_ISOLATED').length;
 }
 
 function setupEventListeners() {
@@ -91,11 +69,11 @@ function setupEventListeners() {
     applyFiltersAndSort();
   });
 
-  // Toggle Top 6 / Top 30
+  // Toggle Top 10 / Full Catalogue
   const toggleBtn = document.getElementById('toggle-top30-btn');
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      showFullTop30 = !showFullTop30;
+      showFullCatalogue = !showFullCatalogue;
       updateToggleUI();
       renderGrid();
     });
@@ -109,7 +87,7 @@ function updateToggleUI() {
   const modeText = document.getElementById('mode-text');
   const counter = document.getElementById('results-count');
 
-  if (showFullTop30) {
+  if (showFullCatalogue) {
     toggleBtn.classList.add('expanded');
     if (toggleIcon) toggleIcon.textContent = '▲';
     if (toggleText) toggleText.textContent = 'Réduire au TOP 10 d\'Élite';
@@ -140,15 +118,15 @@ function applyFiltersAndSort() {
 
     if (filterType === 'spa' && !g.has_spa) return false;
     if (filterType === 'direct' && !g.is_direct_owner) return false;
-    if (filterType === 'cap12_14' && (g.capacity < 10 || g.capacity > 13)) return false;
-    if (filterType === 'cap15_plus' && g.capacity < 14) return false;
+    if (filterType === 'cap12_14' && (g.capacity < 12 || g.capacity > 14)) return false;
+    if (filterType === 'cap15_plus' && g.capacity < 15) return false;
     if (filterType === 'fete' && g.party_policy === 'fêtes_interdites') return false;
 
     return true;
   });
 
   filteredGites.sort((a, b) => {
-    if (sortMode === 'score_desc') return a.rank - b.rank;
+    if (sortMode === 'score_desc') return (a.rank || 999) - (b.rank || 999);
     if (sortMode === 'price_asc') return (a.price || 999999) - (b.price || 999999);
     if (sortMode === 'price_desc') return (b.price || 0) - (a.price || 0);
     if (sortMode === 'cap_desc') return b.capacity - a.capacity;
@@ -162,40 +140,81 @@ function applyFiltersAndSort() {
   renderGrid();
 }
 
+// AFFICHE UNIQUEMENT LE TOP 10 SUR LA CARTE
 function updateMapMarkers() {
   markersLayer.clearLayers();
 
-  // Highlight Top 6 on map, but plot all filtered on map
-  filteredGites.forEach(g => {
+  // Ne tracer que le TOP 10 sur la carte pour une lisibilité parfaite
+  const top10ToMap = allGites.filter(g => g.rank && g.rank <= 10);
+  const bounds = [];
+
+  top10ToMap.forEach(g => {
     if (!g.lat || !g.lon) return;
 
-    let icon = blueIcon;
-    if (g.name.includes("Bergerie")) icon = orangeIcon;
-    else if (g.has_spa) icon = greenIcon;
+    let pinBg = '#0284c7';
+    let pinEmoji = `#${g.rank}`;
+    if (g.name.includes("Bergerie")) {
+      pinBg = '#f59e0b';
+      pinEmoji = `⭐ #${g.rank}`;
+    } else if (g.has_spa) {
+      pinBg = '#10b981';
+      pinEmoji = `♨️ #${g.rank}`;
+    } else if (g.rank <= 3) {
+      pinBg = '#4f46e5';
+    }
 
-    const marker = L.marker([g.lat, g.lon], { icon }).addTo(markersLayer);
+    const rankIcon = L.divIcon({
+      className: 'custom-rank-pin',
+      html: `<div style="
+        background: ${pinBg};
+        color: #ffffff;
+        min-width: 34px;
+        height: 32px;
+        padding: 0 6px;
+        border-radius: 16px;
+        border: 2px solid #ffffff;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 11px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        white-space: nowrap;
+        cursor: pointer;
+      ">${pinEmoji}</div>`,
+      iconSize: [36, 32],
+      iconAnchor: [18, 16],
+      popupAnchor: [0, -16]
+    });
 
-    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (Total 4 nuits • ~${Math.round(g.price / (g.capacity || 12))} €/pers à ${g.capacity || 12})` : `<em>Tarif direct propriétaire</em>`;
-    const phoneHtml = g.phone ? `<p style="margin:4px 0;">📞 <a href="tel:${g.phone}">${g.phone}</a></p>` : '';
-    const spaTag = g.has_spa ? `<span style="background:#10b981; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold;">♨️ ${g.spa_type}</span>` : `<span style="background:#64748b; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px;">Maison de charme</span>`;
+    const marker = L.marker([g.lat, g.lon], { icon: rankIcon }).addTo(markersLayer);
+    bounds.push([g.lat, g.lon]);
+
+    const priceHtml = g.price ? `<strong>${g.price.toLocaleString('fr-FR')} €</strong> (${Math.round(g.price / (g.capacity || 12))} €/pers)` : `<em>Tarif direct</em>`;
+    const spaTag = g.has_spa ? `<span style="background:#10b981; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold;">♨️ ${escapeHtml(g.spa_type)}</span>` : `<span style="background:#0284c7; color:#fff; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:bold;">🟢 100% Isolé</span>`;
 
     const popupContent = `
-      <div style="font-family:'Plus Jakarta Sans',sans-serif; min-width:210px;">
-        <div style="font-size:11px; font-weight:800; color:#0284c7; text-transform:uppercase;">Rang #${g.rank}</div>
-        <h4 style="margin:2px 0 4px 0; font-size:14px; font-weight:bold;">${escapeHtml(g.name)}</h4>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif; min-width:230px;">
+        <div style="font-size:11px; font-weight:800; color:#0284c7; text-transform:uppercase;">Rang #${g.rank} sur 10</div>
+        <h4 style="margin:3px 0 4px 0; font-size:14px; font-weight:bold;">${escapeHtml(g.name)}</h4>
         <p style="margin:0 0 6px 0; font-size:12px; color:#64748b;">📍 ${escapeHtml(g.address)}</p>
-        <p style="margin:0 0 6px 0; font-size:12px;">👥 <strong>${g.capacity} pers.</strong> • 🛏️ <strong>${g.bedrooms} ch.</strong></p>
+        <p style="margin:0 0 6px 0; font-size:12px;">👥 <strong>${g.capacity} pers.</strong> • 🛏️ <strong>${g.bedrooms} ch.</strong> • 🚿 <strong>${g.bathrooms || 2} sdb</strong></p>
         <div style="margin-bottom:6px;">${spaTag}</div>
-        <p style="margin:0 0 6px 0; font-size:12px;">💰 ${priceHtml}</p>
-        ${phoneHtml}
-        <div style="margin-top:8px;">
-          <a href="${g.listing_url}" target="_blank" style="display:inline-block; background:#0f172a; color:#fff; padding:5px 12px; border-radius:4px; text-decoration:none; font-size:11px; font-weight:bold;">Voir l'annonce officielle →</a>
+        <p style="margin:0 0 6px 0; font-size:13px; color:#0f172a;">💰 ${priceHtml}</p>
+        <div style="margin-top:8px; display:flex; gap:6px;">
+          <a href="#card-${g.id}" onclick="document.getElementById('card-${g.id}')?.scrollIntoView({behavior:'smooth'});" style="display:inline-block; background:#0284c7; color:#fff; padding:5px 10px; border-radius:4px; text-decoration:none; font-size:11px; font-weight:bold;">Voir la fiche ↓</a>
+          <a href="${g.listing_url}" target="_blank" style="display:inline-block; background:#0f172a; color:#fff; padding:5px 10px; border-radius:4px; text-decoration:none; font-size:11px; font-weight:bold;">Airbnb →</a>
         </div>
       </div>
     `;
 
     marker.bindPopup(popupContent);
   });
+
+  if (bounds.length > 0 && map) {
+    map.fitBounds(bounds, { padding: [35, 35], maxZoom: 8 });
+  }
 }
 
 function renderGrid() {
@@ -215,8 +234,8 @@ function renderGrid() {
 
   if (loadMoreBtn) loadMoreBtn.style.display = 'none';
 
-  // Render Top 10 by default, or all if toggled
-  const listToRender = showFullTop30 ? filteredGites : filteredGites.slice(0, 10);
+  // Render Top 10 by default, or full catalogue if toggled
+  const listToRender = showFullCatalogue ? filteredGites : filteredGites.slice(0, 10);
 
   listToRender.forEach(g => {
     const card = document.createElement('div');
@@ -227,15 +246,13 @@ function renderGrid() {
     const ppn = g.price ? Math.round(g.price / 4 / (g.capacity || 12)) : null;
     let badgesHtml = `<span class="badge badge-rank">#${g.rank}</span>`;
     if (g.avail_type === 'VERIFIED_ONLINE') {
-      badgesHtml += `<span class="badge badge-avail-verified">🟢 Disponible 29/12 → 02/01</span>`;
+      badgesHtml += `<span class="badge badge-avail-verified">🟢 Dispo 29/12 → 02/01</span>`;
     } else if (g.avail_type === 'DIRECT_INQUIRY') {
-      badgesHtml += `<span class="badge badge-avail-direct">📞 Réservation Directe</span>`;
-    } else if (g.avail_type === 'TOO_SMALL') {
-      badgesHtml += `<span class="badge badge-avail-unverified">⚠️ ${g.capacity} places</span>`;
+      badgesHtml += `<span class="badge badge-avail-direct">📞 Direct Propriétaire</span>`;
     } else if (g.avail_type === 'NOT_ISOLATED') {
       badgesHtml += `<span class="badge badge-avail-complet">❌ Écarté : non isolé</span>`;
     } else if (g.avail_type === 'UNAVAILABLE') {
-      badgesHtml += `<span class="badge badge-avail-complet">❌ Complet sur ces dates</span>`;
+      badgesHtml += `<span class="badge badge-avail-complet">❌ Complet</span>`;
     } else {
       badgesHtml += `<span class="badge badge-avail-unverified">⚪ Non revérifié</span>`;
     }
@@ -250,14 +267,9 @@ function renderGrid() {
     }
 
     if (g.name.includes("Bergerie")) {
-      badgesHtml += `<span class="badge badge-benchmark">⭐ Référence Sans Spa</span>`;
+      badgesHtml += `<span class="badge badge-benchmark">⭐ Coup de Cœur Témoin</span>`;
     } else if (g.has_spa) {
       badgesHtml += `<span class="badge badge-spa">♨️ ${escapeHtml(g.spa_type)}</span>`;
-    }
-    if (g.is_direct_owner) {
-      badgesHtml += `<span class="badge badge-direct">👤 Direct Propriétaire</span>`;
-    } else {
-      badgesHtml += `<span class="badge badge-platform">🏠 ${escapeHtml(g.platform)}</span>`;
     }
 
     const coverUrl = g.photo_cover || 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80';
@@ -281,33 +293,17 @@ function renderGrid() {
     }
 
     let actionsHtml = '';
-    if (g.phone) {
-      actionsHtml += `<a href="tel:${g.phone}" class="btn-cta btn-phone">📞 Appeler (${escapeHtml(g.phone)})</a>`;
+    if (g.satellite) {
+      actionsHtml += `<a href="${g.satellite}" target="_blank" class="btn-cta btn-sat">🛰️ Vue satellite HD</a>`;
     }
-    if (g.email) {
-      actionsHtml += `<a href="mailto:${g.email}" class="btn-cta btn-mail">✉️ Écrire (${escapeHtml(g.email)})</a>`;
-    }
-    if (g.website && g.website !== g.listing_url) {
-      actionsHtml += `<a href="${g.website}" target="_blank" class="btn-cta btn-site">🌐 Site officiel</a>`;
-    }
-    const availUi = {
-      VERIFIED_ONLINE: { note: 'verified', icon: '✅', book: 'Réserver en direct (Airbnb) →' },
-      DIRECT_INQUIRY: { note: 'inquiry', icon: 'ℹ️', book: 'Voir l\'annonce officielle →' },
-      UNAVAILABLE: { note: 'complet', icon: '❌', book: 'Voir l\'annonce (complète) →' },
-      UNVERIFIED: { note: 'unverified', icon: '⚪', book: 'Vérifier les dates sur la plateforme →' },
-      TOO_SMALL: { note: 'unverified', icon: '⚠️', book: "Voir l'annonce →" },
-      NOT_ISOLATED: { note: 'complet', icon: '❌', book: "Voir l'annonce →" }
-    };
-    const ui = availUi[g.avail_type] || availUi.UNVERIFIED;
-    actionsHtml += `<a href="${g.listing_url}" target="_blank" class="btn-cta btn-book">${ui.book}</a>`;
+    actionsHtml += `<a href="${g.listing_url}" target="_blank" class="btn-cta btn-book">Voir l'annonce Airbnb →</a>`;
 
     const availNoteHtml = g.avail_details ? `
-      <div class="avail-note ${ui.note}">
-        ${ui.icon} ${escapeHtml(g.avail_details)}
+      <div class="avail-note verified">
+        ✅ ${escapeHtml(g.avail_details)}
       </div>
     ` : '';
 
-    // Aménagements réels (billard, sauna, baby-foot…) — la piscine extérieure n'est pas listée
     const chipsHtml = (g.amenities && g.amenities.length) ? `
       <div class="amenity-chips">
         ${g.amenities.map(a => `<span class="chip">${escapeHtml(a)}</span>`).join('')}
@@ -320,14 +316,37 @@ function renderGrid() {
       <div class="iso-line iso-${isoKey}">
         <span class="iso-badge">${isoIcon} ${escapeHtml(g.isolation)}</span>
         ${g.isolation_note ? `<span class="iso-note">${escapeHtml(g.isolation_note)}</span>` : ''}
-        ${g.satellite ? `<a class="iso-sat" href="${g.satellite}" target="_blank">🛰️ vue satellite</a>` : ''}
       </div>
     ` : '';
 
-    const surfaceTxt = g.salon_m2 ? `Salon ${g.salon_m2} m²`
-      : (g.surface_m2 ? `Surface ${g.surface_m2} m²` : 'Surface non précisée');
-    const exclTxt = g.exclusivity ? ` · ${escapeHtml(g.exclusivity)}` : '';
-    const surfaceHtml = `<div class="surface-line">📐 ${escapeHtml(surfaceTxt)}${g.reviews ? ` · ${g.reviews} avis` : ''}${exclTxt}</div>`;
+    const surfaceTxt = g.surface_m2 ? `Surface ${g.surface_m2} m²` : 'Surface non précisée';
+    const surfaceHtml = `<div class="surface-line">📐 ${escapeHtml(surfaceTxt)}${g.reviews ? ` · ⭐ ${g.rating || 4.8}/5 (${g.reviews} avis)` : ''}</div>`;
+
+    // BLOC POINTS FORTS & POINTS D'ATTENTION
+    let prosConsHtml = '';
+    if ((g.pros && g.pros.length) || (g.cons && g.cons.length)) {
+      prosConsHtml = `
+        <div class="pros-cons-box">
+          ${g.pros && g.pros.length ? `
+            <div class="pros-block">
+              <div class="pros-heading">✅ Points forts</div>
+              <ul class="pros-list">
+                ${g.pros.map(p => `<li>${escapeHtml(p)}</li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+          ${g.cons && g.cons.length ? `
+            <div class="cons-block">
+              <div class="cons-heading">⚠️ Points d'attention / Vigilances</div>
+              <ul class="cons-list">
+                ${g.cons.map(c => `<li>${escapeHtml(c)}</li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
     card.innerHTML = `
       <div class="card-media">
         <img class="card-img" src="${coverUrl}" alt="${escapeHtml(g.name)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80'">
@@ -341,14 +360,15 @@ function renderGrid() {
         <div class="card-specs">
           <span class="spec-item">👥 <strong>${g.capacity} pers.</strong></span>
           <span class="spec-item">🛏️ <strong>${g.bedrooms} chambres</strong></span>
-          <span class="spec-item">⭐ <strong>${g.score} pts</strong></span>
+          <span class="spec-item">🚿 <strong>${g.bathrooms || 2} sdb</strong></span>
+          <span class="spec-item">🏅 <strong>${g.score} pts</strong></span>
         </div>
         ${availNoteHtml}
         ${chipsHtml}
-        ${g.score_breakdown ? `<div class="score-line">🏅 ${g.score}/100 — budget ${g.score_breakdown.budget} · jacuzzi ${g.score_breakdown.spa} · isolement ${g.score_breakdown.isolation} · capacité ${g.score_breakdown.capacite} · surface ${g.score_breakdown.surface} · aménagements ${g.score_breakdown.amenagements} · avis ${g.score_breakdown.avis}</div>` : ''}
         ${surfaceHtml}
         ${isoHtml}
         <div class="card-desc">${escapeHtml(g.description)}</div>
+        ${prosConsHtml}
         <div class="card-footer">
           <div class="price-row">
             ${priceHtml}
@@ -373,10 +393,3 @@ function escapeHtml(text) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
-
-
-
-
-
-
-
