@@ -740,3 +740,9 @@ body {
   color: #334155;
   margin: 2px 0 8px;
 }
+
+/* --- Bouton email (liste de contacts) --- */
+.btn-mail {
+  background: #0d9488;
+  color: #fff;
+}
