@@ -9,7 +9,7 @@
     "bedrooms": 4,
     "beds": 7,
     "has_spa": true,
-    "spa_type": "jacuzzi",
+    "spa_type": "sauna",
     "amenities": [
       "billard",
       "cheminée",
@@ -304,8 +304,8 @@
     "capacity": 12,
     "bedrooms": 4,
     "beds": 10,
-    "has_spa": true,
-    "spa_type": "jacuzzi",
+    "has_spa": false,
+    "spa_type": "Sans jacuzzi",
     "amenities": [
       "cheminée",
       "ping-pong"
