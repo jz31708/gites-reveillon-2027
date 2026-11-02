@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --accent-green: #10b981;
@@ -754,3 +754,4 @@ body {
 .scoring summary { cursor:pointer; font-weight:800; }
 .scoring ul { margin:8px 0 6px 18px; }
 .scoring li { margin:3px 0; }
+
