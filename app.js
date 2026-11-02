@@ -229,7 +229,7 @@ function renderGrid() {
     } else if (g.avail_type === 'DIRECT_INQUIRY') {
       badgesHtml += `<span class="badge badge-avail-direct">📞 Réservation Directe</span>`;
     } else if (g.avail_type === 'TOO_SMALL') {
-      badgesHtml += <span class="badge badge-avail-unverified">⚠️  places</span>;
+      badgesHtml += `<span class="badge badge-avail-unverified">⚠️ ${g.capacity} places</span>`;
     } else if (g.avail_type === 'UNAVAILABLE') {
       badgesHtml += `<span class="badge badge-avail-complet">❌ Complet sur ces dates</span>`;
     } else {
@@ -287,7 +287,7 @@ function renderGrid() {
       DIRECT_INQUIRY: { note: 'inquiry', icon: 'ℹ️', book: 'Voir l\'annonce officielle →' },
       UNAVAILABLE: { note: 'complet', icon: '❌', book: 'Voir l\'annonce (complète) →' },
       UNVERIFIED: { note: 'unverified', icon: '⚪', book: 'Vérifier les dates sur la plateforme →' },
-      TOO_SMALL: { note: 'unverified', icon: '⚠️', book: 'Voir l''annonce →' }
+      TOO_SMALL: { note: 'unverified', icon: '⚠️', book: "Voir l'annonce →" }
     };
     const ui = availUi[g.avail_type] || availUi.UNVERIFIED;
     actionsHtml += `<a href="${g.listing_url}" target="_blank" class="btn-cta btn-book">${ui.book}</a>`;
