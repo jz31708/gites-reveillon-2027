@@ -232,6 +232,8 @@ function renderGrid() {
       badgesHtml += `<span class="badge badge-avail-direct">📞 Réservation Directe</span>`;
     } else if (g.avail_type === 'TOO_SMALL') {
       badgesHtml += `<span class="badge badge-avail-unverified">⚠️ ${g.capacity} places</span>`;
+    } else if (g.avail_type === 'NOT_ISOLATED') {
+      badgesHtml += `<span class="badge badge-avail-complet">❌ Écarté : non isolé</span>`;
     } else if (g.avail_type === 'UNAVAILABLE') {
       badgesHtml += `<span class="badge badge-avail-complet">❌ Complet sur ces dates</span>`;
     } else {
@@ -293,7 +295,8 @@ function renderGrid() {
       DIRECT_INQUIRY: { note: 'inquiry', icon: 'ℹ️', book: 'Voir l\'annonce officielle →' },
       UNAVAILABLE: { note: 'complet', icon: '❌', book: 'Voir l\'annonce (complète) →' },
       UNVERIFIED: { note: 'unverified', icon: '⚪', book: 'Vérifier les dates sur la plateforme →' },
-      TOO_SMALL: { note: 'unverified', icon: '⚠️', book: "Voir l'annonce →" }
+      TOO_SMALL: { note: 'unverified', icon: '⚠️', book: "Voir l'annonce →" },
+      NOT_ISOLATED: { note: 'complet', icon: '❌', book: "Voir l'annonce →" }
     };
     const ui = availUi[g.avail_type] || availUi.UNVERIFIED;
     actionsHtml += `<a href="${g.listing_url}" target="_blank" class="btn-cta btn-book">${ui.book}</a>`;
@@ -317,6 +320,7 @@ function renderGrid() {
       <div class="iso-line iso-${isoKey}">
         <span class="iso-badge">${isoIcon} ${escapeHtml(g.isolation)}</span>
         ${g.isolation_note ? `<span class="iso-note">${escapeHtml(g.isolation_note)}</span>` : ''}
+        ${g.satellite ? `<a class="iso-sat" href="${g.satellite}" target="_blank">🛰️ vue satellite</a>` : ''}
       </div>
     ` : '';
 

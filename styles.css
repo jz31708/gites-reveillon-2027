@@ -755,3 +755,5 @@ body {
 .scoring ul { margin:8px 0 6px 18px; }
 .scoring li { margin:3px 0; }
 
+
+.iso-sat { font-size:.72rem; color:#2563eb; text-decoration:underline; white-space:nowrap; }
