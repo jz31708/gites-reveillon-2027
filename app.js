@@ -112,14 +112,14 @@ function updateToggleUI() {
   if (showFullTop30) {
     toggleBtn.classList.add('expanded');
     if (toggleIcon) toggleIcon.textContent = '▲';
-    if (toggleText) toggleText.textContent = 'Réduire à la sélection d\'élite (Afficher le TOP 10)';
-    if (modeText) modeText.textContent = 'TOP 30 Complet';
+    if (toggleText) toggleText.textContent = 'Réduire au TOP 10 d\'Élite';
+    if (modeText) modeText.textContent = 'Catalogue Complet (' + filteredGites.length + ' gîtes)';
     if (counter) counter.textContent = filteredGites.length;
   } else {
     toggleBtn.classList.remove('expanded');
     if (toggleIcon) toggleIcon.textContent = '👀';
-    if (toggleText) toggleText.textContent = 'Afficher les 20 autres gîtes du TOP 30 (Voir les 30)';
-    if (modeText) modeText.textContent = 'TOP 10 d\'Élite';
+    if (toggleText) toggleText.textContent = 'Afficher tous les autres gîtes audités (' + filteredGites.length + ' au total)';
+    if (modeText) modeText.textContent = 'TOP 10 d\'Élite (29/12 → 02/01)';
     if (counter) counter.textContent = Math.min(10, filteredGites.length);
   }
 }
