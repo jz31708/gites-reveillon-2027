@@ -123,12 +123,8 @@ body {
 
 /* CONTROLS SECTION */
 .controls-section {
-  position: relative;
-  z-index: 10;
-  position: relative;
-  z-index: 10;
+  position: static;
   background: rgba(248, 250, 252, 0.95);
-  backdrop-filter: blur(12px);
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
@@ -893,8 +889,6 @@ body {
     position: static !important;
     top: auto !important;
     z-index: 1 !important;
-  position: relative;
-  z-index: 10;
     padding: 8px 0;
   }
   .controls-card {
